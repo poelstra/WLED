@@ -23,6 +23,10 @@
 #include "../usermods/sht/usermod_sht.h"
 #endif
 
+#ifdef USERMOD_SHT4x
+#include "../usermods/sht4x/usermod_sht4x.h"
+#endif
+
 #ifdef USERMOD_SN_PHOTORESISTOR
   #include "../usermods/SN_Photoresistor/usermod_sn_photoresistor.h"
 #endif
@@ -374,6 +378,10 @@ void registerUsermods()
 
   #ifdef USERMOD_SHT
   usermods.add(new ShtUsermod());
+  #endif
+
+  #ifdef USERMOD_SHT4x
+  usermods.add(new Sht4xUsermod());
   #endif
 
   #ifdef USERMOD_INTERNAL_TEMPERATURE
